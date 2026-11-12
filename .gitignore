@@ -1,0 +1,12 @@
+# Never commit traffic captures or credentials (they contain session cookies)
+*.har
+*.saz
+*cookie*
+*credential*
+*.pcap
+*.pcapng
+
+# Never commit the real shop configuration (contains database credentials)
+configure.php
+local/configure.php
+seed-ok.sql
