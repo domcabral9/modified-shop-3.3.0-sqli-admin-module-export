@@ -19,7 +19,7 @@ via the client-controlled key of the `configuration[]` array.
 | **Component** | `admin/module_export.php`, `save` action (`configuration[]` array key) |
 | **CWE** | CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') |
 | **Suggested severity** | High (preliminary, CVSS to be confirmed: see section 8) |
-| **Status** | {Unpatched / Under investigation} |
+| **Status** | Fixed in the `main` branch (commit [`0337f941`](https://github.com/modified-shop/modified-shop/commit/0337f941), 2026-10-07), not yet in a release; v3.3.0 remains affected. CVE requested via VulDB |
 | **Publication date** | {YYYY-MM-DD} |
 | **Last updated** | {YYYY-MM-DD} |
 
@@ -360,8 +360,9 @@ Through the oracle, the following DBMS metadata was read:
 
 ## 9. Mitigation
 
-Until an official fix is available:
+The vendor fixed the issue in the `main` branch with commit `0337f941` (#3438, 2026-10-07), which escapes the key with `xtc_db_input()` in `admin/module_export.php` and `admin/modules.php`. No release includes it yet (latest release: v3.3.0, 2026-06-25). Until a release ships the fix:
 
+- Apply the change from commit `0337f941` to the installation, or update from the `main` branch.
 - Restrict access to the export modules to fully trusted administrators only.
 - Apply least privilege to the database user used by the application.
 - Monitor anomalous queries and changes to the `configuration` table.
@@ -382,12 +383,13 @@ Until an official fix is available:
 
 | Date | Event |
 |---|---|
+| 2026-10-07 | Vendor fix committed to `main` (commit `0337f941`, #3438), before this report |
 | 2026-11-11 | Vulnerability identified by static analysis (RedScan Research Team) |
 | 2026-11-11 | Dynamic validation performed in a lab |
 | {YYYY-MM-DD} | Vendor notified |
 | {YYYY-MM-DD} | Receipt acknowledged |
-| {YYYY-MM-DD} | CVE requested / reserved |
-| {YYYY-MM-DD} | Fix released |
+| 2026-11-12 | CVE requested via VulDB (submission #1093812) |
+| {YYYY-MM-DD} | Fix included in an official release |
 | {YYYY-MM-DD} | Advisory published |
 
 ---
@@ -399,7 +401,7 @@ Until an official fix is available:
 - **First notification date:** {YYYY-MM-DD}
 - **Response status:** {Answered / No response / Under review}
 - **Vendor position:** {SUMMARY}
-- **Fixed version:** {FIXED_VERSION}
+- **Fixed version:** fixed in `main` (commit `0337f941`); {FIXED_RELEASE}
 
 ---
 
@@ -441,7 +443,9 @@ Until an official fix is available:
 - https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html
 - {CVE_RECORD_URL}
 - {NVD_URL}
-- {VULDB_URL}
+- https://github.com/modified-shop/modified-shop/commit/0337f941 (vendor fix in `main`)
+- https://vuldb.com/submit/1093812 (VulDB submission)
+- {VULDB_ENTRY_URL}
 
 ---
 
@@ -453,6 +457,7 @@ Until an official fix is available:
 | 1.1 | 2026-11-11 | SLEEP PoC with reproducible request, result field breakdown and evidence 5 |
 | 1.2 | 2026-11-11 | Advisory consolidated into this single English README (separate EN and PT-BR files removed) |
 | 1.3 | 2026-11-12 | Lab addresses redacted in the evidence; evidence files renamed to English; dates in ISO format; allow-list fix rejects unknown keys; stacked statements, CSRF and regression-test notes added; PoC limitation on configuration writes clarified |
+| 1.4 | 2026-11-12 | Status updated: fixed in `main` by commit `0337f941`, not yet released; VulDB submission referenced |
 
 ---
 
