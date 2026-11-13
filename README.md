@@ -386,7 +386,7 @@ The vendor fixed the issue in the `main` branch with commit `0337f941` (#3438, 2
 | 2026-10-07 | Vendor fix committed to `main` (commit `0337f941`, #3438), before this report |
 | 2026-11-11 | Vulnerability identified by static analysis (RedScan Research Team) |
 | 2026-11-11 | Dynamic validation performed in a lab |
-| {YYYY-MM-DD} | Vendor notified |
+| 2026-11-12 | Vendor notified by email (info@modified-shop.org, per the vendor security policy) |
 | {YYYY-MM-DD} | Receipt acknowledged |
 | 2026-11-12 | CVE requested via VulDB (submission #1093812) |
 | {YYYY-MM-DD} | Fix included in an official release |
@@ -397,9 +397,9 @@ The vendor fixed the issue in the `main` branch with commit `0337f941` (#3438, 2
 ## 12. Vendor communication
 
 - **Vendor:** Modified eCommerce Shopsoftware (https://www.modified-shop.org/)
-- **Channel used:** {CHANNEL}
-- **First notification date:** {YYYY-MM-DD}
-- **Response status:** {Answered / No response / Under review}
+- **Channel used:** email to info@modified-shop.org, as required by the vendor security policy (https://github.com/modified-shop/modified-shop/security/policy)
+- **First notification date:** 2026-11-12
+- **Response status:** Awaiting response
 - **Vendor position:** {SUMMARY}
 - **Fixed version:** fixed in `main` (commit `0337f941`); {FIXED_RELEASE}
 
@@ -457,7 +457,7 @@ The vendor fixed the issue in the `main` branch with commit `0337f941` (#3438, 2
 | 1.1 | 2026-11-11 | SLEEP PoC with reproducible request, result field breakdown and evidence 5 |
 | 1.2 | 2026-11-11 | Advisory consolidated into this single English README (separate EN and PT-BR files removed) |
 | 1.3 | 2026-11-12 | Lab addresses redacted in the evidence; evidence files renamed to English; dates in ISO format; allow-list fix rejects unknown keys; stacked statements, CSRF and regression-test notes added; PoC limitation on configuration writes clarified |
-| 1.4 | 2026-11-12 | Status updated: fixed in `main` by commit `0337f941`, not yet released; VulDB submission referenced |
+| 1.4 | 2026-11-12 | Status updated: fixed in `main` by commit `0337f941`, not yet released; VulDB submission referenced; vendor notified by email |
 
 ---
 
