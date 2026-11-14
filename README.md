@@ -1,6 +1,6 @@
 <div align="center">
 
-# SQL Injection in Modified eCommerce Shopsoftware 3.3.0 via `admin/module_export.php`
+# SQL Injection in modified eCommerce Shopsoftware 3.3.0 via `admin/module_export.php`
 
 <a href="https://github.com/carlosalbertotuma/RedScan_Research_Team"><img src="https://img.shields.io/badge/RedScan-Research%20Team-B22222?style=for-the-badge" alt="RedScan Research Team"></a>
 <img src="https://img.shields.io/badge/CWE--89-SQL%20Injection-orange?style=for-the-badge" alt="CWE-89 SQL Injection">
@@ -15,6 +15,8 @@ via the client-controlled key of the `configuration[]` array.
 | | |
 |---|---|
 | **CVE** | {CVE-YYYY-NNNNN} |
+| **Vendor** | modified ([modified-shop.org](https://www.modified-shop.org/)) |
+| **Product** | modified eCommerce Shopsoftware, open-source PHP e-commerce platform ([modified-shop/modified-shop](https://github.com/modified-shop/modified-shop)) |
 | **Affected version** | 3.3.0 (r16825) |
 | **Component** | `admin/module_export.php`, `save` action (`configuration[]` array key) |
 | **CWE** | CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') |
@@ -27,7 +29,8 @@ via the client-controlled key of the `configuration[]` array.
 
 ## 1. Identification
 
-- **Product:** Modified eCommerce Shopsoftware ([modified-shop/modified-shop](https://github.com/modified-shop/modified-shop))
+- **Vendor:** modified ([modified-shop.org](https://www.modified-shop.org/))
+- **Product:** modified eCommerce Shopsoftware, open-source PHP e-commerce platform ([modified-shop/modified-shop](https://github.com/modified-shop/modified-shop))
 - **Analyzed version:** 3.3.0, revision 16825
 - **Endpoint:** `admin/module_export.php` (`save` action)
 - **Functional parameter:** the **key** of the `configuration[]` array sent via POST (e.g. `configuration[MODULE_PRODUCTS_EXPORT_FILE]`)
@@ -318,7 +321,7 @@ Through the oracle, the following DBMS metadata was read:
 
 ### 7.5. Reproduction steps
 
-1. Install Modified eCommerce Shopsoftware **3.3.0** (revision 16825) with default settings.
+1. Install modified eCommerce Shopsoftware **3.3.0** (revision 16825) with default settings.
 2. Log into the admin panel with an account that has access to the export modules.
 3. Ensure the **products_export** module is installed (the `MODULE_PRODUCTS_EXPORT_FILE` key exists in the `configuration` table).
 4. Submit to the `save` action a `configuration[]` key containing a delay function, as in section 7.1. The request must include the page's CSRF token (hidden field issued by the form itself) when required.
@@ -396,7 +399,8 @@ The vendor fixed the issue in the `main` branch with commit `0337f941` (#3438, 2
 
 ## 12. Vendor communication
 
-- **Vendor:** Modified eCommerce Shopsoftware (https://www.modified-shop.org/)
+- **Vendor:** modified ([modified-shop.org](https://www.modified-shop.org/))
+- **Product:** modified eCommerce Shopsoftware
 - **Channel used:** email to info@modified-shop.org, as required by the vendor security policy (https://github.com/modified-shop/modified-shop/security/policy)
 - **First notification date:** 2026-11-12
 - **Response status:** Awaiting response
@@ -458,6 +462,7 @@ The vendor fixed the issue in the `main` branch with commit `0337f941` (#3438, 2
 | 1.2 | 2026-11-11 | Advisory consolidated into this single English README (separate EN and PT-BR files removed) |
 | 1.3 | 2026-11-12 | Lab addresses redacted in the evidence; evidence files renamed to English; dates in ISO format; allow-list fix rejects unknown keys; stacked statements, CSRF and regression-test notes added; PoC limitation on configuration writes clarified |
 | 1.4 | 2026-11-12 | Status updated: fixed in `main` by commit `0337f941`, not yet released; VulDB submission referenced; vendor notified by email |
+| 1.5 | 2026-11-13 | Vendor (modified) and product (modified eCommerce Shopsoftware) stated separately in the summary, identification and vendor communication sections, matching the VulDB submission; official lowercase spelling of the product name |
 
 ---
 
