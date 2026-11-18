@@ -463,7 +463,7 @@ The vendor fixed the issue in the `main` branch with commit `0337f941` (#3438, 2
 | 1.3 | 2026-11-12 | Lab addresses redacted in the evidence; evidence files renamed to English; dates in ISO format; allow-list fix rejects unknown keys; stacked statements, CSRF and regression-test notes added; PoC limitation on configuration writes clarified |
 | 1.4 | 2026-11-12 | Status updated: fixed in `main` by commit `0337f941`, not yet released; VulDB submission referenced; vendor notified by email |
 | 1.5 | 2026-11-13 | Vendor (modified) and product (modified eCommerce Shopsoftware) stated separately in the summary, identification and vendor communication sections, matching the VulDB submission; official lowercase spelling of the product name |
-| 1.6 | 2026-11-18 | Credits: Smith Braz listed by his handle (5MITH) |
+| 1.6 | 2026-11-18 | Credits: Smith Braz listed by handle (5MITH) |
 
 ---
 
